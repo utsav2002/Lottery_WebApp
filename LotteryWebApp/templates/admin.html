@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="title is-1">CSC2031 Blog Admin</h1>
+
+    <div class="column is-10 is-offset-1">
+        <h4 class="title is-4">Current Users</h4>
+        <div class="box">
+            {% if current_users %}
+                <div class="field">
+                    <table class="table">
+                        <tr>
+                            <th>Role</th>
+                            <th>ID</th>
+                            <th>Username</th>
+                        </tr>
+                        {% for u in current_users %}
+                            <tr>
+                                <td>{{ u.role }}</td>
+                                <td>{{ u.id }}</td>
+                                <td>{{ u.username }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+            <form method="POST" action="/view_all_users">
+                <div>
+                    <button class="button is-info is-centered">View All Users</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="column is-10 is-offset-1" id="test">
+        <h4 class="title is-4">Security Logs</h4>
+        <div class="box">
+            {% if logs %}
+                <div class="field">
+                <table class="table">
+                    <tr>
+                        <th>Last 10 Security Log Entries</th>
+                    </tr>
+                    {% for entry in logs %}
+                        <tr>
+                            <td>{{ entry }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+            <form method="POST" action="/logs">
+                <div>
+                    <button class="button is-info is-centered">View Logs</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+{% endblock %}

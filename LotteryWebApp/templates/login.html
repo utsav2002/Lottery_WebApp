@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">{% extends "base.html" %} {% block content %}</span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Login</b></span></h3>
+<p class="p1"><span class="s1">{% with messages = get_flashed_messages() %} {% if messages %}</span></p>
+<p class="p1"><span class="s1">{{ messages[0] }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% endif %} {% endwith %}</span></p>
+<p class="p1"><span class="s1">{{ form.csrf_token() }}</span></p>
+<p class="p1"><span class="s1">{{ form.username(class="input", placeholder="Username") }} {% for error in form.username.errors %} {{ error }} {% endfor %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{{ form.password(class="input", placeholder="Password") }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{{ form.pin(class="input", placeholder="PIN") }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{{ form.recaptcha }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{{ form.submit(class="button is-info is-centered") }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% endblock %}</span></p>
+
+<div class="field">
+<div class="control">
+{{ form.pin(class="input", placeholder="PIN") }}
+</div>
+</div>
+
+</body>
+</html>
