@@ -10,3 +10,9 @@ Features:
 - Secure Database Interaction: Integrates Flask-SQLAlchemy for database operations
 - Modular Design: Organized into separate blueprints for admin, lottery, and user functionalities.
 - Security Enhancement: Uses Talisman for enforcing HTTPS and setting security headers.
+
+Security Protocols:
+- HTTPS Enforcement: Ensured by Talisman.
+- Password Hashing: Uses bcrypt for secure password storage.
+- Data Encryption: Encryption and decryption functions for sensitive data.
+- 2FA Implementation: For an additional layer of security.
